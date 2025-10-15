@@ -28,7 +28,7 @@ nav{
 }
 
 .logo{
-  background: linear-gradient(90deg, #12a0b3, #bdc0ea);
+  background: linear-gradient(90deg, rgb(113, 148, 135));
   background-clip: text;
   color: transparent;
     font-weight: bold;
@@ -49,7 +49,7 @@ nav ul li{
 
 nav ul li a{
   font-weight: bold;
-  background: linear-gradient(90deg, #12a0b3, #bdc0ea);
+  background: linear-gradient(90deg, rgb(113, 148, 135));
   background-clip: text;
   color: transparent;
 }
@@ -59,7 +59,7 @@ nav ul li a{
 }
 
 .list-icon i{
-    color: #fff;
+    color:rgb(113, 148, 135);
     font-size: 30px;
 }
 @keyframes BackgroundGradient {
@@ -108,7 +108,7 @@ nav ul li a{
 .undernav {
   position: relative;
   width: 100%;
-  height: 60vh; /* Responsive height */
+  height: 60vh; 
   min-height: 320px;
   max-height: 600px;
   overflow: hidden;
@@ -122,7 +122,7 @@ nav ul li a{
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures image covers area proportionally */
+  object-fit: cover; 
   z-index: 1;
 }
 
@@ -135,8 +135,8 @@ nav ul li a{
   z-index: 2;
   width: 90%;
   text-align: center;
-  background: none; /* Remove background gradient for text visibility */
-  color: #fff; /* White text for contrast */
+  background: none; 
+  color: #fff; 
 }
 
 .left h1 {
@@ -158,12 +158,12 @@ nav ul li a{
   display: block;
   padding: 10px 20px;
   /* Gradient text styles */
-  background: linear-gradient(90deg, #4d4d4d, #ffffff);
+  background: linear-gradient(90deg, #fcfcfc,  rgb(125, 138, 131));
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  text-shadow: none; /* Remove shadow for clear gradient */
+  text-shadow: none;
   border-radius: 10px;
 }
 
@@ -196,14 +196,27 @@ nav ul li a{
 
 }
 .picture2{
-     display: block;
+      display: block;
     margin: 0 auto;
     background: transparent;
     max-width: 400px;
     width: 100%;
     height: 500px;
+    animation: float 2s ease-in-out infinite;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
 
 
+}
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 
@@ -252,13 +265,13 @@ nav ul li a{
 figure{
     position: relative;
     left: 0;
-    width: 400%; /* width dikali slide */
+    width: 400%; 
     animation: 10s slide infinite;
 }
 
 .slide{
     position: relative;
-    width: 25%; /* width dibagi slide */
+    width: 25%; 
     float: left;
 }
 
@@ -352,8 +365,8 @@ figure{
 .upper-part-face,
 .upper-part-back {
   text-align: center;
-  background:linear-gradient(red,blue);
-  color: rgb(36, 2, 252);
+  background:linear-gradient(rgb(0, 0, 0),rgb(113, 148, 135));
+  color: rgb(0, 0, 0);
   border: 3px solid ;
   display: flex;
   justify-content: center;
@@ -371,7 +384,7 @@ figure{
 
 .upper-part-back {
   background-color: rgb(177, 10, 10);
-  color: rgb(0, 29, 114);
+  color: rgb(0, 0, 0);
   transform: rotatex(180deg);
 }
 
@@ -387,7 +400,7 @@ figure{
 
 .lower-part-face,
 .lower-part-back {
-  background-color: rgb(10, 10, 142);
+  background-color: rgb(113, 148, 135);
   width: 100%;
   height: 100%;
   color: rgb(243, 239, 239);
@@ -406,7 +419,7 @@ figure{
   backface-visibility: visible;
   border-radius: 40px;
   color: rgb(216, 197, 216);
-  background-color: rgb(52, 0, 224);
+  background-color:rgb(113, 148, 135);
   transform: rotateX(180deg);
   z-index: 1;
   transition: border-radius 0.6s;
@@ -421,7 +434,7 @@ figure{
 }
 
 .card:hover > .lower-part > .lower-part-back {
-  border: 3px solid rgb(45, 0, 246);
+  border: 3px solid rgb(0, 0, 0);
   border-radius: 0 0 40px 40px;
 }
 @media (max-width: 900px) {
@@ -475,7 +488,7 @@ figure{
 .form {
   width: 100%;
   max-width: 350px;
-  background: #0a192f;
+  background: #859692;
   border-radius: 16px;
   padding: 24px 18px;
   box-shadow: 0 2px 16px rgba(100,255,218,0.08);
@@ -486,11 +499,12 @@ figure{
 }
 
 .form-heading {
-  color: #64ffda;
+  color: rgb(230, 230, 230);
   font-size: 1.1em;
   margin-bottom: 10px;
   text-align: center;
   background: none;
+  font-weight: bold;
 }
 
 .form-field {
@@ -518,7 +532,7 @@ figure{
   padding: 10px;
   border-radius: 8px;
   border: none;
-  background: #64ffda;
+  background:rgb(113, 148, 135);
   color: #0a192f;
   font-weight: bold;
   cursor: pointer;
@@ -526,12 +540,12 @@ figure{
 }
 
 .sendMessage-btn:hover {
-  background: #43c6ac;
+  background: rgb(113, 148, 135);
   color: #fff;
 }
 .form-card1 {
   margin: 20px;
-  background-image: linear-gradient(163deg, #64ffda 0%, #64ffda 100%);
+  background-image: linear-gradient(163deg,rgb(113, 148, 135) 100%);
   border-radius: 22px;
   transition: all 0.3s;
 }
@@ -577,7 +591,7 @@ figure{
     .footer-col h3 {
       margin-bottom: 15px;
       font-size: 1.2rem;
-      color: #ff6600;
+      color: rgb(113, 148, 135);
     }
 
     .footer-col p {
@@ -763,7 +777,7 @@ figure{
   bottom: -5px;
   height: 4px;
   width: 100%;
-  background: linear-gradient(to right, red, blue);
+  background: linear-gradient(to right,  rgb(43, 48, 45), rgb(229, 229, 232));
   border-radius: 100px;
   left: 0;
   transition: 100ms;
@@ -772,3 +786,4 @@ figure{
 .section-title:hover:after {
   width: 0;
 }
+
