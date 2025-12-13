@@ -304,7 +304,16 @@ border-radius: 20px 20px 0px 0px;
 
 
 
+@media (max-width: 700px) {
+  .product-cards {
+    justify-content: space-between;
+  }
 
+  .card {
+    width: calc(50% - 12px); /* 2 cards per row */
+    margin: 0;
+  }
+}
 
 
 /*contact-us*/
