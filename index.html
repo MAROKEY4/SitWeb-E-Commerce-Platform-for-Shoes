@@ -11,20 +11,75 @@
 </head>
 <body>
         <!--navbar-->
-    <nav>
-                <div class="logo">
-            <h1>MAROKEY SHOP.</h1>
+   <nav class="modern-navbar">
+    <div class="nav-container">
+        <a href="#" class="nav-logo">
+            <span class="logo-text">MAROKEY</span>
+            <span class="logo-dot">.</span>
+            <span class="logo-shop">SHOP</span>
+        </a>
+        
+        <div class="nav-menu" id="navMenu">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">
+                        <span class="link-icon">🏠</span>
+                        <span class="link-text">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">
+                        <span class="link-icon">📖</span>
+                        <span class="link-text">About</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#product" class="nav-link">
+                        <span class="link-icon">👟</span>
+                        <span class="link-text">Product</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">
+                        <span class="link-icon">📞</span>
+                        <span class="link-text">Contact</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <!-- Search Bar (Optional) -->
+            <div class="nav-search">
+                <input type="text" placeholder="Search products..." class="search-input">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
         </div>
-        <ul id="List">
-            <li><a href="#home">Home </a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#product">Product</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="list-icon">
-            <i class="fa-solid fa-bars" onclick="togglelist()"></i>
-        </div> 
-    </nav>
+        
+        <div class="nav-actions">
+            <!-- Cart Icon -->
+            <button class="action-btn cart-btn-nav">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-badge">3</span>
+            </button>
+            
+            <!-- User Profile / Login -->
+            <button class="action-btn user-btn">
+                <i class="fas fa-user"></i>
+            </button>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="menu-toggle" id="menuToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Add padding-top to body to account for fixed navbar -->
+<div style="height: 80px;"></div>
     <!--home section-->
     <div class="undernav">
    
@@ -42,7 +97,7 @@
 </div>
  </div>
       <!--about section-->
-
+ <section id="about"></section>
  <div class="about">
 
     <a class="section-title" href="#">ABOUT US</a>
@@ -54,359 +109,764 @@
 Whether you’re looking for trendy sneakers, elegant shoes, or everyday essentials, we’ve got something for everyone. At MAROKEY-SHOP, we believe every step matters – and we’re here to make yours stylish and confident.</p>
 <img class="picture2" src="pictures/picture2-removebg-preview.png">
  </div>
-     <!--product section-->
 
- <div class="product">
-  
-          <div class="product-header">
-            <a class="section-title" href="#">PRODUCTS</a>
-            <p>Explore our exclusive collection of shoes designed to bring comfort, style, and confidence to every step.</p>
-          </div>          </div>
-<div class="product-cards">
-          <div class="card">
-              <img class="card-bo" src="pictures/picture3-removebg-preview.png" alt="Product 1" />
-            <div class="card-info">
-              <div class="card-name">
-                <h3>Blue AIR NIKE</h3>
-              <p style="color: rgb(6, 133, 32); font-weight: bold;">$50.00</p>
-              </div>
-              <a> <img src="pictures/shopping-cart.png" style="background-color: transparent;"/> </a>
-            </div>
-            </div>
-          <div class="card">
-              <img class="card-bo" src="pictures/picture4-removebg-preview.png"style="width:100%;" alt="Product 2" />
-            <div class="card-info">
-              <div class="card-name">
-                <h3>Red AIR NIKE</h3>
-              <p style="color: rgb(6, 133, 32); font-weight: bold;">$30.00</p>
-              </div>
-              <a> <img src="pictures/shopping-cart.png" style="background-color: transparent;"/> </a>
-            </div>
-            </div><div class="card">
-              <img class="card-bo" src="pictures/jordan-1-unc-dz5485-400-2.webp" alt="Product 1" />
-            <div class="card-info">
-              <div class="card-name">
-                <h3>Blue JORDAN 2025</h3>
-              <p style="color: rgb(6, 133, 32); font-weight: bold;">$100.00</p>
-              </div>
-              <a> <img src="pictures/shopping-cart.png" style="background-color: transparent;"/> </a>
-            </div>
-            </div><div class="card">
-              <img class="card-bo" src="pictures/picture6-removebg-preview.png" alt="Product 1" />
-            <div class="card-info">
-              <div class="card-name">
-                <h3>Yellow JORDAN 2025</h3>
-              <p style="color: rgb(6, 133, 32); font-weight: bold;">$110.00</p>
-              </div>
-              <a> <img src="pictures/shopping-cart.png" style="background-color: transparent;"/> </a>
-            </div>
-            </div><div class="card">
-              <img class="card-bo" src="pictures/ID8636_01_standard.avif" alt="Product 1" />
-            <div class="card-info">
-              <div class="card-name">
-                <h3>Adidas shoes </h3>
-              <p style="color: rgb(6, 133, 32); font-weight: bold;">$75.00</p>
-              </div>
-              <a> <img src="pictures/shopping-cart.png" style="background-color: transparent;"/> </a>
-            </div>
-            </div><div class="card">
-              <img class="card-bo" src="pictures/B22767.png" alt="Product 1" />
-            <div class="card-info">
-              <div class="card-name">
-                <h3>Adidas Shoes</h3>
-              <p style="color: rgb(6, 133, 32); font-weight: bold;">$35.00</p>
-              </div>
-              <a> <img src="pictures/shopping-cart.png" style="background-color: transparent;"/> </a>
-            </div>
-            </div>
-               <div class="card">
-              <img class="card-bo" src="pictures/IE7002_01_standard.avif" alt="Product 1" />
-            <div class="card-info">
-              <div class="card-name">
-                <h3>Pink Adidas</h3>
-              <p style="color: rgb(6, 133, 32); font-weight: bold;">$150.00</p>
-              </div>
-              <a> <img src="pictures/shopping-cart.png" style="background-color: transparent;"/> </a>
-            </div>
-            </div>   <div class="card">
-              <img class="card-bo" src="pictures/IF5720_01_standard.avif" alt="Product 1" />
-            <div class="card-info">
-              <div class="card-name">
-                <h3>Adidas Shoes</h3>
-              <p style="color: rgb(6, 133, 32); font-weight: bold;">$90.00</p>
-              </div>
-              <a> <img src="pictures/shopping-cart.png" style="background-color: transparent;"/> </a>
-            </div>
-            </div>   <div class="card">
-              <img class="card-bo" src="pictures/1026161_Main_1913622.jpg" alt="Product 1" />
-            <div class="card-info">
-              <div class="card-name">
-                <h3>F50</h3>
-              <p style="color: rgb(6, 133, 32); font-weight: bold;">$80.00</p>
-              </div>
-              <a> <img src="pictures/shopping-cart.png" style="background-color: transparent;"/> </a>
-            </div>
-            </div>
-               <div class="card">
-              <img class="card-bo" src="pictures/270789_Main_Thumb_1287083.avif" alt="Product 1" />
-            <div class="card-info">
-              <div class="card-name">
-                <h3>Gold F50 (Special one)</h3>
-              <p style="color: rgb(6, 133, 32); font-weight: bold;">$250.00</p>
-              </div>
-              <a> <img src="pictures/shopping-cart.png" style="background-color: transparent;"/> </a>
-            </div>
-            </div>   <div class="card">
-              <img class="card-bo" src="pictures/281010_Main_Thumb_1310748.avif" alt="Product 1" />
-            <div class="card-info">
-              <div class="card-name">
-                <h3>F50</h3>
-              <p style="color: rgb(6, 133, 32); font-weight: bold;">$60.00</p>
-              </div>
-              <a> <img src="pictures/shopping-cart.png" style="background-color: transparent;"/> </a>
-            </div>
-            </div>
-               <div class="card">
-              <img class="card-bo" src="pictures/1011511_Main_1764337.avif" alt="Product 1" />
-            <div class="card-info">
-              <div class="card-name">
-                <h3>F50 </h3>
-              <p style="color: rgb(6, 133, 32); font-weight: bold;">$50.00</p>
-              </div>
-              <a> <img src="pictures/shopping-cart.png" style="background-color: transparent;"/> </a>
-            </div>
-            </div>
-   <div class="card">
-              <img class="card-bo" src="pictures/il_fullxfull.4566453805_ll0y.avif" alt="Product 1" />
-            <div class="card-info">
-              <div class="card-name">
-                <h3>Adidas sandals</h3>
-              <p style="color: rgb(6, 133, 32); font-weight: bold;">$30.00</p>
-              </div>
-              <a> <img src="pictures/shopping-cart.png" style="background-color: transparent;"/> </a>
-            </div>
-            </div>   <div class="card">
-              <img class="card-bo" src="pictures/sandals.webp" alt="Product 1" />
-            <div class="card-info">
-              <div class="card-name">
-                <h3>Adidas sandals</h3>
-              <p style="color: rgb(6, 133, 32); font-weight: bold;">$20.00</p>
-              </div>
-              <a> <img src="pictures/shopping-cart.png" style="background-color: transparent;"/> </a>
-            </div>
-            </div>
-               <div class="card">
-              <img class="card-bo" src="pictures/arsenal.webp" alt="Product 1" />
-            <div class="card-info">
-              <div class="card-name">
-                <h3>Arsenal Jersey</h3>
-              <p style="color: rgb(6, 133, 32); font-weight: bold;">$50.00</p>
-              </div>
-              <a> <img src="pictures/shopping-cart.png" style="background-color: transparent;"/> </a>
-            </div>
-            </div>
-               <div class="card">
-              <img class="card-bo" src="pictures/Arsenal_21-22_Tsey_Blue_GM0212_01_laydown.avif" alt="Product 1" />
-            <div class="card-info">
-              <div class="card-name">
-                <h3>Arsenal Jersey</h3>
-              <p style="color: rgb(6, 133, 32); font-weight: bold;">$50.00</p>
-              </div>
-              <a> <img src="pictures/shopping-cart.png" style="background-color: transparent;"/> </a>
-            </div>
-            </div>
-               <div class="card">
-              <img class="card-bo" src="pictures/barcelone.jpeg" alt="Product 1" />
-            <div class="card-info">
-              <div class="card-name">
-                <h3>barcelone</h3>
-              <p style="color: rgb(6, 133, 32); font-weight: bold;">$60.00</p>
-              </div>
-              <a> <img src="pictures/shopping-cart.png" style="background-color: transparent;"/> </a>
-            </div>
-            </div>
-               <div class="card">
-              <img class="card-bo" src="pictures/barcelone 2.webp" alt="Product 1" />
-            <div class="card-info">
-              <div class="card-name">
-                <h3>barcelone</h3>
-              <p style="color: rgb(6, 133, 32); font-weight: bold;">$80.00</p>
-              </div>
-              <a> <img src="pictures/shopping-cart.png" style="background-color: transparent;"/> </a>
-            </div>
-            </div>
-               <div class="card">
-              <img class="card-bo" src="pictures/Maillot-Maroc-Domicile-2025-2026.jpg" alt="Product 1" />
-            <div class="card-info">
-              <div class="card-name">
-                <h3>Morocco</h3>
-              <p style="color: rgb(6, 133, 32); font-weight: bold;">$50.00</p>
-              </div>
-              <a> <img src="pictures/shopping-cart.png" style="background-color: transparent;"/> </a>
-            </div>
-            </div>   <div class="card">
-              <img class="card-bo" src="pictures/morocco2.webp" alt="Product 1" />
-            <div class="card-info">
-              <div class="card-name">
-                <h3>Morocco</h3>
-              <p style="color: rgb(6, 133, 32); font-weight: bold;">$40.00</p>
-              </div>
-              <a> <img src="pictures/shopping-cart.png" style="background-color: transparent;"/> </a>
-            </div>
-            </div>
-          </div>
+<!--product section-->
+ <section id="product"></section>
+<div class="product">
+    <div class="product-header">
+        <a class="section-title" href="#">PRODUCTS</a>
+        <p class="product-description">Explore our exclusive collection of shoes designed to bring comfort, style, and confidence to every step.</p>
+    </div>
+    
+    <!-- SPECIAL NEW COLLECTION SECTION - Premium Style -->
+    <div class="new-collection-section">
+        <div class="new-collection-header">
+            <span class="new-badge">🔥 HOT</span>
+            <h2 class="new-collection-title">NEW COLLECTION 2025</h2>
+            <p class="new-collection-subtitle">Fresh arrivals • Limited edition • Premium quality</p>
+        </div>
         
-    <!--contact us section-->
+        <div class="new-collection-slider">
+            <div class="slider-container">
+                <div class="slider-track">
+                    <div class="collection-slide">
+                        <div class="collection-card">
+                            <div class="collection-image">
+                                <img src="pictures/puma new collection.jpeg" alt="New Collection">
+                                <div class="image-overlay">
+                                    <span class="overlay-text">Just Arrived</span>
+                                </div>
+                            </div>
+                            <div class="collection-info">
+                                <h3>Scorch Puma </h3>
+                                <p>The ultimate comfort for your daily steps</p>
+                                <div class="collection-price">$149.99</div>
+                                <button class="collection-btn">Shop Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collection-slide">
+                        <div class="collection-card">
+                            <div class="collection-image">
+                                <img src="pictures/puma new collection2.avif" alt="New Collection">
+                                <div class="image-overlay">
+                                    <span class="overlay-text">Limited</span>
+                                </div>
+                            </div>
+                            <div class="collection-info">
+                                <h3>Scorch Puma</h3>
+                                <p>Scorch Puma Men Running Shoes</p>
+                                <div class="collection-price">$129.99</div>
+                                <button class="collection-btn">Shop Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collection-slide">
+                        <div class="collection-card">
+                            <div class="collection-image">
+                                <img src="pictures/airforce new collection.webp" alt="New Collection">
+                                <div class="image-overlay">
+                                    <span class="overlay-text">Exclusive</span>
+                                </div>
+                            </div>
+                            <div class="collection-info">
+                                <h3>Air Force 1</h3>
+                                <p>Street style masterpiece</p>
+                                <div class="collection-price">$199.99</div>
+                                <button class="collection-btn">Shop Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collection-slide">
+                        <div class="collection-card">
+                            <div class="collection-image">
+                                <img src="pictures/airforce new collection2.webp" alt="New Collection">
+                                <div class="image-overlay">
+                                    <span class="overlay-text">2025 Edition</span>
+                                </div>
+                            </div>
+                            
+                            <div class="collection-info">
+                                <h3>Adidas Ultraboost</h3>
+                                <p>Maximum energy return</p>
+                                <div class="collection-price">$159.99</div>
+                                <button class="collection-btn">Shop Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-nav">
+                <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
 
-<div class="contact-us">
-        <section id="contact"></section>
+    <!-- Regular Products Grid - All 20 Products -->
+    <div class="product-cards">
+        <!-- 1. Blue AIR NIKE -->
+        <div class="product-item">
+            <div class="discount-badge">-30%</div>
+            <img class="product-image" src="pictures/picture3-removebg-preview.png" alt="Blue AIR NIKE" loading="lazy" />
+            <div class="product-details">
+                <h3 class="product-name">Blue AIR NIKE</h3>
+                <div class="price-container">
+                    <span class="old-price">$71.43</span>
+                    <span class="new-price">$50.00</span>
+                </div>
+                <button class="cart-btn">
+                    <img src="pictures/shopping-cart.png" alt="Add to cart" />
+                </button>
+            </div>
+        </div>
 
-        <a class="section-title" href="#" style="color: black;"> Contact-us</a>
-<div class="form-card1">
-  <div class="form-card2">
-    <form class="form">
-      <p class="form-heading">Contact-us</p>
+        <!-- 2. Red AIR NIKE -->
+        <div class="product-item">
+            <div class="discount-badge">-40%</div>
+            <img class="product-image" src="pictures/picture4-removebg-preview.png" alt="Red AIR NIKE" loading="lazy" />
+            <div class="product-details">
+                <h3 class="product-name">Red AIR NIKE</h3>
+                <div class="price-container">
+                    <span class="old-price">$50.00</span>
+                    <span class="new-price">$30.00</span>
+                </div>
+                <button class="cart-btn">
+                    <img src="pictures/shopping-cart.png" alt="Add to cart" />
+                </button>
+            </div>
+        </div>
 
-      <div class="form-field">
-        <input required="" placeholder="Name" class="input-field" type="text" />
-      </div>
+        <!-- 3. Blue JORDAN 2025 -->
+        <div class="product-item">
+            <div class="discount-badge">-20%</div>
+            <img class="product-image" src="pictures/jordan-1-unc-dz5485-400-2.webp" alt="Blue JORDAN 2025" loading="lazy" />
+            <div class="product-details">
+                <h3 class="product-name">Blue JORDAN 2025</h3>
+                <div class="price-container">
+                    <span class="old-price">$125.00</span>
+                    <span class="new-price">$100.00</span>
+                </div>
+                <button class="cart-btn">
+                    <img src="pictures/shopping-cart.png" alt="Add to cart" />
+                </button>
+            </div>
+        </div>
 
-      <div class="form-field">
-        <input
-          required=""
-          placeholder="Email"
-          class="input-field"
-          type="email" />
-        
-      </div>
-                  <div class="form-field">
-        <select required class="input-field">
-          <option value="" disabled selected>Choose Product</option>
-          <option value="Sneakers">yellow basket shoes</option>
-          <option value="Elegant Shoes">blue nike</option>
-                    <option value="Elegant Shoes">nike colors</option>
-          <option value="Elegant Shoes">red air force</option>
-                   <option value="Elegant Shoes">white air force</option>
-                   <option value="Elegant Shoes">classic nike</option>
+        <!-- 4. Yellow JORDAN 2025 -->
+        <div class="product-item">
+            <div class="discount-badge">-15%</div>
+            <img class="product-image" src="pictures/picture6-removebg-preview.png" alt="Yellow JORDAN 2025" loading="lazy" />
+            <div class="product-details">
+                <h3 class="product-name">Yellow JORDAN 2025</h3>
+                <div class="price-container">
+                    <span class="old-price">$129.41</span>
+                    <span class="new-price">$110.00</span>
+                </div>
+                <button class="cart-btn">
+                    <img src="pictures/shopping-cart.png" alt="Add to cart" />
+                </button>
+            </div>
+        </div>
 
-          <option value="Everyday Essentials">Everyday Essentials</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
+        <!-- 5. Adidas Running -->
+        <div class="product-item">
+            <div class="discount-badge">-25%</div>
+            <img class="product-image" src="pictures/ID8636_01_standard.avif" alt="Adidas Running" loading="lazy" />
+            <div class="product-details">
+                <h3 class="product-name">Adidas Running</h3>
+                <div class="price-container">
+                    <span class="old-price">$100.00</span>
+                    <span class="new-price">$75.00</span>
+                </div>
+                <button class="cart-btn">
+                    <img src="pictures/shopping-cart.png" alt="Add to cart" />
+                </button>
+            </div>
+        </div>
 
-      <div class="form-field">
-        <textarea
-          required=""
-          placeholder="Message"
-          cols="30"
-          rows="3"
-          class="input-field"></textarea>
-      </div>
+        <!-- 6. Adidas Classic -->
+        <div class="product-item">
+            <div class="discount-badge">-30%</div>
+            <img class="product-image" src="pictures/B22767.png" alt="Adidas Classic" loading="lazy" />
+            <div class="product-details">
+                <h3 class="product-name">Adidas Classic</h3>
+                <div class="price-container">
+                    <span class="old-price">$50.00</span>
+                    <span class="new-price">$35.00</span>
+                </div>
+                <button class="cart-btn">
+                    <img src="pictures/shopping-cart.png" alt="Add to cart" />
+                </button>
+            </div>
+        </div>
 
-      <button class="sendMessage-btn">Send Message</button>
-    </form>
-  </div>
-  </div>
-  
+        <!-- 7. Pink Adidas -->
+        <div class="product-item">
+            <div class="discount-badge">-25%</div>
+            <img class="product-image" src="pictures/IE7002_01_standard.avif" alt="Pink Adidas" loading="lazy" />
+            <div class="product-details">
+                <h3 class="product-name">Pink Adidas</h3>
+                <div class="price-container">
+                    <span class="old-price">$200.00</span>
+                    <span class="new-price">$150.00</span>
+                </div>
+                <button class="cart-btn">
+                    <img src="pictures/shopping-cart.png" alt="Add to cart" />
+                </button>
+            </div>
+        </div>
+
+        <!-- 8. Adidas Sport -->
+        <div class="product-item">
+            <div class="discount-badge">-10%</div>
+            <img class="product-image" src="pictures/IF5720_01_standard.avif" alt="Adidas Sport" loading="lazy" />
+            <div class="product-details">
+                <h3 class="product-name">Adidas Sport</h3>
+                <div class="price-container">
+                    <span class="old-price">$100.00</span>
+                    <span class="new-price">$90.00</span>
+                </div>
+                <button class="cart-btn">
+                    <img src="pictures/shopping-cart.png" alt="Add to cart" />
+                </button>
+            </div>
+        </div>
+
+        <!-- 9. Adidas F50 -->
+        <div class="product-item">
+            <div class="discount-badge">-20%</div>
+            <img class="product-image" src="pictures/1026161_Main_1913622.jpg" alt="Adidas F50" loading="lazy" />
+            <div class="product-details">
+                <h3 class="product-name">Adidas F50</h3>
+                <div class="price-container">
+                    <span class="old-price">$100.00</span>
+                    <span class="new-price">$80.00</span>
+                </div>
+                <button class="cart-btn">
+                    <img src="pictures/shopping-cart.png" alt="Add to cart" />
+                </button>
+            </div>
+        </div>
+
+        <!-- 10. Gold F50 Special -->
+        <div class="product-item">
+            <div class="discount-badge">-20%</div>
+            <img class="product-image" src="pictures/270789_Main_Thumb_1287083.avif" alt="Gold F50 Special" loading="lazy" />
+            <div class="product-details">
+                <h3 class="product-name">Gold F50 Special</h3>
+                <div class="price-container">
+                    <span class="old-price">$312.50</span>
+                    <span class="new-price">$250.00</span>
+                </div>
+                <button class="cart-btn">
+                    <img src="pictures/shopping-cart.png" alt="Add to cart" />
+                </button>
+            </div>
+        </div>
+
+        <!-- 11. Adidas F50 Pro -->
+        <div class="product-item">
+            <div class="discount-badge">-25%</div>
+            <img class="product-image" src="pictures/281010_Main_Thumb_1310748.avif" alt="Adidas F50 Pro" loading="lazy" />
+            <div class="product-details">
+                <h3 class="product-name">Adidas F50 Pro</h3>
+                <div class="price-container">
+                    <span class="old-price">$80.00</span>
+                    <span class="new-price">$60.00</span>
+                </div>
+                <button class="cart-btn">
+                    <img src="pictures/shopping-cart.png" alt="Add to cart" />
+                </button>
+            </div>
+        </div>
+
+        <!-- 12. Adidas F50 Elite -->
+        <div class="product-item">
+            <div class="discount-badge">-30%</div>
+            <img class="product-image" src="pictures/1011511_Main_1764337.avif" alt="Adidas F50 Elite" loading="lazy" />
+            <div class="product-details">
+                <h3 class="product-name">Adidas F50 Elite</h3>
+                <div class="price-container">
+                    <span class="old-price">$71.43</span>
+                    <span class="new-price">$50.00</span>
+                </div>
+                <button class="cart-btn">
+                    <img src="pictures/shopping-cart.png" alt="Add to cart" />
+                </button>
+            </div>
+        </div>
+
+        <!-- 13. Adidas Sandals -->
+        <div class="product-item">
+            <div class="discount-badge">-40%</div>
+            <img class="product-image" src="pictures/il_fullxfull.4566453805_ll0y.avif" alt="Adidas Sandals" loading="lazy" />
+            <div class="product-details">
+                <h3 class="product-name">Adidas Sandals</h3>
+                <div class="price-container">
+                    <span class="old-price">$50.00</span>
+                    <span class="new-price">$30.00</span>
+                </div>
+                <button class="cart-btn">
+                    <img src="pictures/shopping-cart.png" alt="Add to cart" />
+                </button>
+            </div>
+        </div>
+
+        <!-- 14. Adidas Sport Sandals -->
+        <div class="product-item">
+            <div class="discount-badge">-50%</div>
+            <img class="product-image" src="pictures/sandals.webp" alt="Adidas Sport Sandals" loading="lazy" />
+            <div class="product-details">
+                <h3 class="product-name">Adidas Sport Sandals</h3>
+                <div class="price-container">
+                    <span class="old-price">$40.00</span>
+                    <span class="new-price">$20.00</span>
+                </div>
+                <button class="cart-btn">
+                    <img src="pictures/shopping-cart.png" alt="Add to cart" />
+                </button>
+            </div>
+        </div>
+
+        <!-- 15. Arsenal Jersey 2025 -->
+        <div class="product-item">
+            <div class="discount-badge">-30%</div>
+            <img class="product-image" src="pictures/arsenal.webp" alt="Arsenal Jersey 2025" loading="lazy" />
+            <div class="product-details">
+                <h3 class="product-name">Arsenal Jersey 2025</h3>
+                <div class="price-container">
+                    <span class="old-price">$71.43</span>
+                    <span class="new-price">$50.00</span>
+                </div>
+                <button class="cart-btn">
+                    <img src="pictures/shopping-cart.png" alt="Add to cart" />
+                </button>
+            </div>
+        </div>
+
+        <!-- 16. Arsenal Jersey Blue -->
+        <div class="product-item">
+            <div class="discount-badge">-30%</div>
+            <img class="product-image" src="pictures/Arsenal_21-22_Tsey_Blue_GM0212_01_laydown.avif" alt="Arsenal Jersey Blue" loading="lazy" />
+            <div class="product-details">
+                <h3 class="product-name">Arsenal Jersey Blue</h3>
+                <div class="price-container">
+                    <span class="old-price">$71.43</span>
+                    <span class="new-price">$50.00</span>
+                </div>
+                <button class="cart-btn">
+                    <img src="pictures/shopping-cart.png" alt="Add to cart" />
+                </button>
+            </div>
+        </div>
+
+        <!-- 17. Barcelona Jersey -->
+        <div class="product-item">
+            <div class="discount-badge">-25%</div>
+            <img class="product-image" src="pictures/barcelone.jpeg" alt="Barcelona Jersey" loading="lazy" />
+            <div class="product-details">
+                <h3 class="product-name">Barcelona Jersey</h3>
+                <div class="price-container">
+                    <span class="old-price">$80.00</span>
+                    <span class="new-price">$60.00</span>
+                </div>
+                <button class="cart-btn">
+                    <img src="pictures/shopping-cart.png" alt="Add to cart" />
+                </button>
+            </div>
+        </div>
+
+        <!-- 18. Barcelona Home Jersey -->
+        <div class="product-item">
+            <div class="discount-badge">-20%</div>
+            <img class="product-image" src="pictures/barcelone 2.webp" alt="Barcelona Home Jersey" loading="lazy" />
+            <div class="product-details">
+                <h3 class="product-name">Barcelona Home Jersey</h3>
+                <div class="price-container">
+                    <span class="old-price">$100.00</span>
+                    <span class="new-price">$80.00</span>
+                </div>
+                <button class="cart-btn">
+                    <img src="pictures/shopping-cart.png" alt="Add to cart" />
+                </button>
+            </div>
+        </div>
+
+        <!-- 19. Morocco Jersey 2026 -->
+        <div class="product-item">
+            <div class="discount-badge">-30%</div>
+            <img class="product-image" src="pictures/Maillot-Maroc-Domicile-2025-2026.jpg" alt="Morocco Jersey 2026" loading="lazy" />
+            <div class="product-details">
+                <h3 class="product-name">Morocco Jersey 2026</h3>
+                <div class="price-container">
+                    <span class="old-price">$71.43</span>
+                    <span class="new-price">$50.00</span>
+                </div>
+                <button class="cart-btn">
+                    <img src="pictures/shopping-cart.png" alt="Add to cart" />
+                </button>
+            </div>
+        </div>
+
+        <!-- 20. Morocco Away Jersey -->
+        <div class="product-item">
+            <div class="discount-badge">-50%</div>
+            <img class="product-image" src="pictures/morocco2.webp" alt="Morocco Away Jersey" loading="lazy" />
+            <div class="product-details">
+                <h3 class="product-name">Morocco Away Jersey</h3>
+                <div class="price-container">
+                    <span class="old-price">$80.00</span>
+                    <span class="new-price">$40.00</span>
+                </div>
+                <button class="cart-btn">
+                    <img src="pictures/shopping-cart.png" alt="Add to cart" />
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
-<!--footer-->
-<footer class="footer">
-   <div class="footer-container">
-      <div class="footer-col">
-        <h3>About Us</h3>
-        <p>We provide stylish and comfortable shoes for every step. Quality, style, and affordability in one place.</p>
-      </div>
-      <div class="footer-col">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Product</a></li>
-          <li><a href="#">Contact-us</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h3>Follow Us</h3>
-        <div class="social-icons">
-         <ul class="wrapper">
-  <li class="icon LinkdIn">
-   <a  href="https://www.linkedin.com/in/omar-rodi-631632343" target="_blank"> <span class="tooltip">LinkdIn</span>
-    <svg
-      viewBox="0 0 24 24"
-      height="1.2em"
-      fill="currentColor"
-xmlns="http://www.w3.org/2000/svg"     >
-      <path
-     d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 
-               0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.049c.476-.9 
-               1.637-1.85 3.372-1.85 3.604 0 4.268 2.372 4.268 5.456v6.285zM5.337 
-               7.433c-1.144 0-2.067-.926-2.067-2.067 0-1.142.923-2.066 
-               2.067-2.066 1.141 0 2.066.924 2.066 2.066 0 
-               1.141-.925 2.067-2.066 2.067zm1.777 13.019H3.559V9h3.555v11.452zM22.225 
-               0H1.771C.792 0 0 .774 0 1.729v20.542C0 
-               23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 
-               24 22.271V1.729C24 .774 23.2 0 22.225 0z" ></path>
-    </svg>
-    </a>
-  </li>
-  <li class="icon GitHub">
-    <a href="https://github.com/MAROKEY4" target="_blank">
-    <span class="tooltip">GitHub</span>
-   <svg xmlns="http://www.w3.org/2000/svg" 
-         width="1.5em" height="1.5em" 
-         viewBox="0 0 24 24" 
-         fill="currentColor">
-      <path d="M12 .297c-6.63 0-12 5.373-12 12 
-               0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 
-               0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61 
-               -.546-1.385-1.333-1.754-1.333-1.754-1.09-.744.084-.729.084-.729 
-               1.205.084 1.84 1.236 1.84 1.236 
-               1.07 1.835 2.809 1.305 3.495.998 
-               .108-.776.418-1.305.762-1.605-2.665-.3-5.466-1.335-5.466-5.93 
-               0-1.31.465-2.38 1.235-3.22 
-               -.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23 
-               .96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 
-               2.28-1.552 3.285-1.23 3.285-1.23 
-               .645 1.653.24 2.873.12 3.176 
-               .765.84 1.23 1.91 1.23 3.22 
-               0 4.61-2.805 5.625-5.475 5.92 
-               .42.36.81 1.096.81 2.22 
-               0 1.606-.015 2.896-.015 3.286 
-               0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297 
-               c0-6.627-5.373-12-12-12"/>
-    </svg>
-      <path
-        d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429"
-      ></path>
-    </svg>
-    </a>
-  </li>
-  <li class="icon instagram">
-        <a href="https://www.instagram.com/o_rodi_" target="_blank">
 
-    <span class="tooltip">Instagram</span>
+      <!--shooping button-->
+    <button class="reward-btn" onclick="window.location.href='shopping.html'">
+  <span class="IconContainer">
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      height="1.2em"
-      fill="currentColor"
-      class="bi bi-instagram"
-      viewBox="0 0 16 16"
+      fill="none"
+      viewBox="0 0 60 20"
+      class="box-top box"
     >
       <path
-        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+        stroke-linecap="round"
+        stroke-width="4"
+        stroke="#6A8EF6"
+        d="M2 18L58 18"
+      ></path>
+      <circle
+        stroke-width="5"
+        stroke="#6A8EF6"
+        fill="#101218"
+        r="7"
+        cy="9.5"
+        cx="20.5"
+      ></circle>
+      <circle
+        stroke-width="5"
+        stroke="#6A8EF6"
+        fill="#101218"
+        r="7"
+        cy="9.5"
+        cx="38.5"
+      ></circle>
+    </svg>
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 58 44"
+      class="box-body box"
+    >
+      <mask fill="white" id="path-1-inside-1_81_19">
+        <rect rx="3" height="44" width="58"></rect>
+      </mask>
+      <rect
+        mask="url(#path-1-inside-1_81_19)"
+        stroke-width="8"
+        stroke="#6A8EF6"
+        fill="#101218"
+        rx="3"
+        height="44"
+        width="58"
+      ></rect>
+      <line
+        stroke-width="6"
+        stroke="#6A8EF6"
+        y2="29"
+        x2="58"
+        y1="29"
+        x1="-3.61529e-09"
+      ></line>
+      <path
+        stroke-linecap="round"
+        stroke-width="5"
+        stroke="#6A8EF6"
+        d="M45.0005 20L36 3"
+      ></path>
+      <path
+        stroke-linecap="round"
+        stroke-width="5"
+        stroke="#6A8EF6"
+        d="M21 3L13.0002 19.9992"
       ></path>
     </svg>
-        </a>
-  </li>
-</ul>
-      </div>
+
+    <span class="coin"></span>
+  </span>
+  <span class="text">shopping</span>
+</button>
+
+    <!--contact us section-->
+<div class="contact-section" id="contact">
+    <div class="contact-header">
+        <span class="contact-badge">📬 Get in Touch</span>
+        <h2 class="contact-title">Let's <span class="gradient-text">Connect</span></h2>
+        <p class="contact-subtitle">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
     </div>
-   </div>
-    <div class="footer-bottom">
-      © 2025 MAROKEY SHOP. All rights reserved.
+
+    <div class="contact-container">
+        <!-- Contact Form Card -->
+        <div class="contact-form-card">
+            <div class="form-decoration">
+                <div class="decoration-circle"></div>
+                <div class="decoration-circle"></div>
+                <div class="decoration-circle"></div>
+            </div>
+            
+            <form class="modern-form" id="contactForm">
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" id="name" required>
+                        <label for="name" class="input-label">Your Full Name</label>
+                        <span class="input-icon">👤</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="email" id="email" required>
+                        <label for="email" class="input-label">Email Address</label>
+                        <span class="input-icon">📧</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <select id="product-interest" required>
+                            <option value="" disabled selected></option>
+                            <option value="sneakers">👟 Sneakers Collection</option>
+                            <option value="jordans">🔥 Jordan Series</option>
+                            <option value="adidas">🔵 Adidas Collection</option>
+                            <option value="jerseys">⚽ Football Jerseys</option>
+                            <option value="sandals">🩴 Sandals & Slides</option>
+                            <option value="other">✨ Other Products</option>
+                        </select>
+                        <label for="product-interest" class="input-label">Interested Product</label>
+                        <span class="input-icon">🛍️</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <textarea id="message" rows="4" required></textarea>
+                        <label for="message" class="input-label">Your Message</label>
+                        <span class="input-icon">💬</span>
+                    </div>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="newsletter">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-text">Subscribe to our newsletter for exclusive offers</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="modern-submit-btn">
+                    <span>Send Message</span>
+                    <span class="btn-icon">→</span>
+                    <div class="btn-particles"></div>
+                </button>
+            </form>
+
+            <div class="form-success" id="formSuccess">
+                <div class="success-icon">✓</div>
+                <h3>Message Sent!</h3>
+                <p>Thank you for reaching out. We'll get back to you within 24 hours.</p>
+            </div>
+        </div>
+
+        <!-- Contact Info Cards -->
+        <div class="contact-info">
+            <div class="info-card">
+                <div class="info-icon">📍</div>
+                <h3>Visit Us</h3>
+                <p>123 Fashion Street<br>New York, NY 10001</p>
+                <a href="#" class="info-link">Get Directions →</a>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">📞</div>
+                <h3>Call Us</h3>
+                <p>+1 (555) 123-4567<br>Mon-Fri, 9am-6pm</p>
+                <a href="tel:+15551234567" class="info-link">Call Now →</a>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">💬</div>
+                <h3>Live Chat</h3>
+                <p>Instant support<br>24/7 Available</p>
+                <a href="#" class="info-link">Start Chat →</a>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">⏰</div>
+                <h3>Business Hours</h3>
+                <p>Mon-Fri: 9am - 8pm<br>Sat-Sun: 10am - 6pm</p>
+                <a href="#" class="info-link">View Calendar →</a>
+            </div>
+        </div>
     </div>
-  </footer>
 </div>
+<!-- Ultra Modern Footer -->
+<!-- Ultra Modern Footer -->
+<footer class="modern-footer">
+    <div class="footer-wave">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+    </div>
+
+    <div class="footer-content">
+        <!-- Main Footer Grid -->
+        <div class="footer-grid">
+            <!-- Brand Column -->
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <span class="logo-main">MAROKEY</span>
+                    <span class="logo-dot-footer">.</span>
+                    <span class="logo-shop-footer">SHOP</span>
+                </div>
+                <p class="footer-description">Step into elegance with our exclusive collection of premium footwear. Quality, comfort, and style for every step you take.</p>
+                
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <span class="badge-icon">✓</span>
+                        <span>100% Authentic</span>
+                    </div>
+                    <div class="trust-badge">
+                        <span class="badge-icon">✓</span>
+                        <span>Free Shipping</span>
+                    </div>
+                    <div class="trust-badge">
+                        <span class="badge-icon">✓</span>
+                        <span>30-Day Returns</span>
+                    </div>
+                </div>
+
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa payment-icon"></i>
+                    <i class="fab fa-cc-mastercard payment-icon"></i>
+                    <i class="fab fa-cc-amex payment-icon"></i>
+                    <i class="fab fa-cc-paypal payment-icon"></i>
+                    <i class="fab fa-cc-apple-pay payment-icon"></i>
+                </div>
+            </div>
+
+            <!-- Quick Links Column -->
+            <div class="footer-col">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home"><span class="link-arrow">→</span> Home</a></li>
+                    <li><a href="#about"><span class="link-arrow">→</span> About Us</a></li>
+                    <li><a href="#product"><span class="link-arrow">→</span> Products</a></li>
+                    <li><a href="#contact"><span class="link-arrow">→</span> Contact</a></li>
+                    <li><a href="#"><span class="link-arrow">→</span> FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Categories Column -->
+            <div class="footer-col">
+                <h3 class="footer-title">Categories</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><span class="link-arrow">→</span> Sneakers</a></li>
+                    <li><a href="#"><span class="link-arrow">→</span> Jordan Collection</a></li>
+                    <li><a href="#"><span class="link-arrow">→</span> Adidas Originals</a></li>
+                    <li><a href="#"><span class="link-arrow">→</span> Football Jerseys</a></li>
+                    <li><a href="#"><span class="link-arrow">→</span> Sandals & Slides</a></li>
+                    <li><a href="#"><span class="link-arrow">→</span> Limited Edition</a></li>
+                </ul>
+            </div>
+
+            <!-- Support Column -->
+            <div class="footer-col">
+                <h3 class="footer-title">Support</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><span class="link-arrow">→</span> Track Order</a></li>
+                    <li><a href="#"><span class="link-arrow">→</span> Returns Policy</a></li>
+                    <li><a href="#"><span class="link-arrow">→</span> Size Guide</a></li>
+                    <li><a href="#"><span class="link-arrow">→</span> Shipping Info</a></li>
+                    <li><a href="#"><span class="link-arrow">→</span> Privacy Policy</a></li>
+                    <li><a href="#"><span class="link-arrow">→</span> Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter Column -->
+            <div class="footer-col newsletter-col">
+                <h3 class="footer-title">Stay Updated</h3>
+                <p class="newsletter-text">Subscribe for exclusive offers, new arrivals, and 10% off your first order!</p>
+                
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="newsletter-input-group">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="newsletter-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <div class="social-links">
+                    <a href="https://www.facebook.com/MAROKEY4/?locale=fr_FR" class="social-link" target="_blank">
+                        <i class="fab fa-facebook-f social-icon"></i>
+                        <span class="social-tooltip">Facebook</span>
+                    </a>
+                    <a href="https://www.instagram.com/o_rodi_/" class="social-link" target="_blank">
+                        <i class="fab fa-instagram social-icon"></i>
+                        <span class="social-tooltip">Instagram</span>
+                    </a>
+                    <a href="https://x.com/MAROKEY4" class="social-link" target="_blank">
+                        <i class="fab fa-twitter social-icon"></i>
+                        <span class="social-tooltip">Twitter</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/omar-rodi-631632343/" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin-in social-icon"></i>
+                        <span class="social-tooltip">LinkedIn</span>
+                    </a>
+                    <a href="https://www.tiktok.com/@marokeyo" class="social-link" target="_blank">
+                        <i class="fab fa-tiktok social-icon"></i>
+                        <span class="social-tooltip">TikTok</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Bar -->
+        <div class="footer-bottom">
+            <div class="bottom-content">
+                <p class="copyright">© 2025 MAROKEY SHOP. All rights reserved. Crafted with <i class="fas fa-heart" style="color: #ff6b6b;"></i> for shoe lovers</p>
+                
+                <div class="legal-links">
+                    <a href="#">Privacy</a>
+                    <span class="separator">•</span>
+                    <a href="#">Terms</a>
+                    <span class="separator">•</span>
+                    <a href="#">Cookies</a>
+                    <span class="separator">•</span>
+                    <a href="#">Accessibility</a>
+                </div>
+
+                <div class="language-selector">
+                    <select>
+                        <option value="en"><i class="fas fa-flag-usa"></i> English</option>
+                        <option value="es"><i class="fas fa-flag-spain"></i> Español</option>
+                        <option value="fr"><i class="fas fa-flag-france"></i> Français</option>
+                        <option value="ar"><i class="fas fa-flag-morocco"></i> العربية</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
     <script src="main.js"> </script>
 
 </body>
