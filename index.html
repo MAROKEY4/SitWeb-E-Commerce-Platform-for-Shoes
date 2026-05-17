@@ -11,6 +11,87 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- Premium Login Modal -->
+<div id="loginModal" class="login-modal" >
+    <div class="login-overlay" onclick="closeLoginModal()"></div>
+  <div class="login-card">
+    <button class="login-close" onclick="closeLoginModal()"><i class="fas fa-times"></i></button>
+    
+    <div class="login-header">
+      <div class="login-icon">
+        <i class="fas fa-user-astronaut"></i>
+      </div>
+      <h2>Welcome Back</h2>
+      <p>Sign in to your account or create a new one</p>
+    </div>
+
+    <div class="login-tabs">
+      <button class="login-tab active" data-tab="login">Login</button>
+      <button class="login-tab" data-tab="register">Register</button>
+    </div>
+
+    <!-- Login Form -->
+    <form id="loginFormElem" class="login-form active">
+      <div class="input-group">
+        <i class="fas fa-envelope"></i>
+        <input type="email" id="loginEmail" placeholder="Email address" required>
+      </div>
+      <div class="input-group">
+        <i class="fas fa-lock"></i>
+        <input type="password" id="loginPassword" placeholder="Password" required>
+      </div>
+      <button type="submit" class="btn-login">Login <i class="fas fa-arrow-right"></i></button>
+      <p class="login-message" id="loginMessage"></p>
+      <div class="login-footer">
+        <a href="#">Forgot password?</a>
+      </div>
+    </form>
+
+    <!-- Register Form -->
+    <form id="registerFormElem" class="login-form">
+      <div class="input-group">
+        <i class="fas fa-user"></i>
+        <input type="text" id="regName" placeholder="Full name" required>
+      </div>
+      <div class="input-group">
+        <i class="fas fa-envelope"></i>
+        <input type="email" id="regEmail" placeholder="Email address" required>
+      </div>
+      <div class="input-group">
+        <i class="fas fa-lock"></i>
+        <input type="password" id="regPassword" placeholder="Password (min 6 chars)" required>
+      </div>
+      <div class="input-group">
+        <i class="fas fa-check-circle"></i>
+        <input type="password" id="regConfirmPassword" placeholder="Confirm password" required>
+      </div>
+      <button type="submit" class="btn-login">Create Account <i class="fas fa-user-plus"></i></button>
+      <p class="login-message" id="registerMessage"></p>
+    </form>
+
+    <div class="login-divider">
+      <span>Or continue with</span>
+    </div>
+    <div class="social-login">
+      <button class="social-btn"><i class="fab fa-google"></i> Google</button>
+      <button class="social-btn"><i class="fab fa-facebook-f"></i> Facebook</button>
+    </div>
+  </div>
+</div>
+<!-- User Dropdown Menu -->
+<div class="user-dropdown" id="userDropdown" style="display: none;">
+  <div class="user-dropdown-header">
+    <i class="fas fa-user-circle"></i>
+    <div>
+      <span id="dropdownUserName"></span>
+      <small id="dropdownUserEmail"></small>
+    </div>
+  </div>
+  <div class="user-dropdown-divider"></div>
+  <button id="logoutButton" class="logout-btn">
+    <i class="fas fa-sign-out-alt"></i> Logout
+  </button>
+</div>
 
 
 <nav class="mk-navbar" id="navbar">
@@ -25,6 +106,10 @@
     </ul>
 
     <div class="nav-actions">
+    
+      <button class="icon-btn" id="userBtn" onclick="openLoginModal()" aria-label="Account">
+  <i class="fas fa-user"></i>
+</button>
       
       <button class="icon-btn cart-trigger" onclick="openCart()" aria-label="Cart">
         <i class="fas fa-shopping-bag"></i>
@@ -36,6 +121,14 @@
     </div>
   </div>
 </nav>
+<!-- User Dropdown Menu -->
+<div class="user-dropdown" id="userDropdown" style="display:none;">
+  <div class="user-info">
+    <i class="fas fa-user-circle"></i>
+    <span id="userEmail"></span>
+  </div>
+  <button id="logoutBtn" class="btn-secondary">Logout</button>
+</div>
 
 <!-- ── Cart Overlay + Sidebar ──────────────────────────────── -->
 <div class="cart-overlay" id="cart-overlay"></div>
@@ -310,8 +403,13 @@ document.getElementById('newsletterForm').addEventListener('submit', e => {
 // ── Smooth scroll nav links ──────────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
-    const t = document.querySelector(a.getAttribute('href'));
-    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    const href = a.getAttribute('href');
+    if (!href || href === '#') return;
+    const target = document.querySelector(href);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
   });
 });
 

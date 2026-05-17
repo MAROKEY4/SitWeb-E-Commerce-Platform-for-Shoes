@@ -290,6 +290,11 @@
 
 <script src="main.js"></script>
 <script>
+const user = JSON.parse(localStorage.getItem('mk_current_user') || 'null');
+if (!user) {
+  sessionStorage.setItem('redirectAfterLogin', 'true');
+  window.location.href = 'index.html';
+}
 const TAX_RATE = 0.10;
 let deliveryFee = 5.99;
 let selectedPay = 'card';
@@ -389,6 +394,13 @@ function placeOrder() {
 }
 
 renderSummary();
+function getCurrentUser() {
+    try { return JSON.parse(localStorage.getItem('mk_current_user')) || null; } catch { return null; }
+  }
+  if (!getCurrentUser()) {
+    sessionStorage.setItem('redirectAfterLogin', 'true');
+    window.location.href = 'index.html';
+  }
 </script>
 </body>
 </html>

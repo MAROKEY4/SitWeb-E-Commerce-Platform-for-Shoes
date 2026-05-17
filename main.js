@@ -119,8 +119,8 @@ function renderCartSidebar(){
     <div class="cart-summary">
       <div class="cart-total-row"><span>Subtotal (${cartCount()} items)</span><span>$${total.toFixed(2)}</span></div>
     </div>
-    <a href="checkout.html" class="checkout-btn">Checkout — $${total.toFixed(2)} <i class="fas fa-arrow-right"></i></a>
-    <button class="clear-cart-btn" onclick="if(confirm('Clear entire cart?')){clearCart()}">Clear Cart</button>`;
+<a href="#" class="checkout-btn" onclick="proceedToCheckout(event); return false;">Checkout — $${total.toFixed(2)} <i class="fas fa-arrow-right"></i></a>
+   <button class="clear-cart-btn" onclick="if(confirm('Clear entire cart?')){clearCart()}">Clear Cart</button>`;
 }
 
 function openCart(){
@@ -242,6 +242,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   initBackToTop();
   initPromoBanner();
 
+
   document.getElementById('cart-overlay')?.addEventListener('click',closeCart);
 
   const navbar=document.querySelector('.mk-navbar');
@@ -291,3 +292,209 @@ navMenu?.querySelectorAll('a').forEach(a => {
     if(e.key==='Escape'){closeCart();closeQuickView();closeSearch();toggle?.classList.remove('open');toggle?.setAttribute('aria-expanded','false');navMenu?.classList.remove('open');document.body.style.overflow='';}
   });
 });
+
+// ========== AUTHENTICATION SYSTEM (FIXED) ==========
+function getUsers() {
+  try { return JSON.parse(localStorage.getItem('mk_users')) || []; } catch { return []; }
+}
+function saveUsers(users) { localStorage.setItem('mk_users', JSON.stringify(users)); }
+
+function getCurrentUser() {
+  try { return JSON.parse(localStorage.getItem('mk_current_user')) || null; } catch { return null; }
+}
+function setCurrentUser(user) {
+  if (user) localStorage.setItem('mk_current_user', JSON.stringify(user));
+  else localStorage.removeItem('mk_current_user');
+}
+
+function openLoginModal() {
+  const modal = document.getElementById('loginModal');
+  if (modal) modal.classList.add('show');
+}
+function closeLoginModal() {
+  const modal = document.getElementById('loginModal');
+  if (modal) modal.classList.remove('show');
+      document.body.style.overflow = '';        
+
+}
+
+function isLoggedIn() { return getCurrentUser() !== null; }
+
+// Tab switching
+function initAuthTabs() {
+  document.querySelectorAll('.login-tab').forEach(tab => {
+    tab.removeEventListener('click', tab._handler);
+    tab._handler = () => {
+      document.querySelectorAll('.login-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const formToShow = tab.dataset.tab === 'login' ? 'loginFormElem' : 'registerFormElem';
+      document.querySelectorAll('.login-form').forEach(f => f.classList.remove('active'));
+      const form = document.getElementById(formToShow);
+      if (form) form.classList.add('active');
+    };
+    tab.addEventListener('click', tab._handler);
+  });
+}
+
+// Register form
+function initRegisterForm() {
+  const form = document.getElementById('registerFormElem');
+  if (!form) return;
+  form.removeEventListener('submit', form._submitHandler);
+  form._submitHandler = (e) => {
+    e.preventDefault();
+    const name = document.getElementById('regName')?.value.trim();
+    const email = document.getElementById('regEmail')?.value.trim();
+    const pwd = document.getElementById('regPassword')?.value;
+    const confirm = document.getElementById('regConfirmPassword')?.value;
+    const msg = document.getElementById('registerMessage');
+    if (!name || !email || !pwd) { msg.textContent = 'All fields required.'; return; }
+    if (pwd !== confirm) { msg.textContent = 'Passwords do not match.'; return; }
+    if (pwd.length < 6) { msg.textContent = 'Password must be at least 6 characters.'; return; }
+    const users = getUsers();
+    if (users.find(u => u.email === email)) {
+      msg.textContent = 'Email already registered. Please login.';
+      return;
+    }
+    users.push({ name, email, password: pwd });
+    saveUsers(users);
+    setCurrentUser({ name, email });
+    msg.style.color = '#22c55e';
+    msg.textContent = 'Registration successful! You are now logged in.';
+    setTimeout(() => {
+      closeLoginModal();
+      updateAuthUI();
+      if (sessionStorage.getItem('redirectAfterLogin')) {
+        sessionStorage.removeItem('redirectAfterLogin');
+        window.location.href = 'checkout.html';
+      }
+    }, 1200);
+  };
+  form.addEventListener('submit', form._submitHandler);
+}
+
+// Login form
+function initLoginForm() {
+  const form = document.getElementById('loginFormElem');
+  if (!form) return;
+  form.removeEventListener('submit', form._submitHandler);
+  form._submitHandler = (e) => {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail')?.value.trim();
+    const pwd = document.getElementById('loginPassword')?.value;
+    const msg = document.getElementById('loginMessage');
+    const users = getUsers();
+    const user = users.find(u => u.email === email && u.password === pwd);
+    if (!user) { msg.textContent = 'Invalid email or password.'; return; }
+    setCurrentUser({ name: user.name, email: user.email });
+    msg.style.color = '#22c55e';
+    msg.textContent = 'Login successful!';
+    setTimeout(() => {
+      closeLoginModal();
+      updateAuthUI();
+      if (sessionStorage.getItem('redirectAfterLogin')) {
+        sessionStorage.removeItem('redirectAfterLogin');
+        window.location.href = 'checkout.html';
+      }
+    }, 800);
+  };
+  form.addEventListener('submit', form._submitHandler);
+}
+
+function logout() {
+  setCurrentUser(null);
+  updateAuthUI();
+  showToast('Logged out successfully.');
+  if (window.location.pathname.includes('checkout.html')) window.location.href = 'index.html';
+}
+
+function updateAuthUI() {
+  const user = getCurrentUser();
+  const userBtn = document.getElementById('userBtn');
+  const dropdown = document.getElementById('userDropdown');
+  const userNameSpan = document.getElementById('dropdownUserName');
+  const userEmailSpan = document.getElementById('dropdownUserEmail');
+
+  if (!userBtn) return;
+
+  if (user) {
+    // Logged in – show user icon with dropdown
+    userBtn.innerHTML = '<i class="fas fa-user-check"></i>';
+    
+    // Fill dropdown data
+    if (userNameSpan) userNameSpan.textContent = user.name || 'User';
+    if (userEmailSpan) userEmailSpan.textContent = user.email;
+    
+    // Toggle dropdown on click
+    userBtn.onclick = (e) => {
+      e.stopPropagation();
+      if (dropdown) {
+        const isVisible = dropdown.style.display === 'block';
+        dropdown.style.display = isVisible ? 'none' : 'block';
+      }
+    };
+  } else {
+    // Not logged in – show login trigger
+    userBtn.innerHTML = '<i class="fas fa-user"></i>';
+    userBtn.onclick = () => openLoginModal();
+    if (dropdown) dropdown.style.display = 'none';
+  }
+}
+
+// Make sure checkout button checks login
+function proceedToCheckout(e) {
+  if (e) e.preventDefault();
+  if (!isLoggedIn()) {
+    openLoginModal();
+    sessionStorage.setItem('redirectAfterLogin', 'true');
+  } else {
+    window.location.href = 'checkout.html';
+  }
+  const dropdown = document.getElementById('userDropdown');
+if (dropdown) dropdown.style.display = 'none';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    const modal = document.getElementById('loginModal');
+    if (modal && modal.classList.contains('show')) {
+      closeLoginModal();
+    }
+  }
+});
+
+// Initialize everything on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+  initAuthTabs();
+  initRegisterForm();
+  initLoginForm();
+  updateAuthUI();
+
+  // Optional: if you have a checkout button in cart footer, override its link
+  const checkoutBtn = document.querySelector('.checkout-btn');
+  if (checkoutBtn) {
+    checkoutBtn.removeAttribute('onclick');
+    checkoutBtn.addEventListener('click', proceedToCheckout);
+  }
+});
+// Close user dropdown when clicking outside
+document.addEventListener('click', function(e) {
+  const dropdown = document.getElementById('userDropdown');
+  const userBtn = document.getElementById('userBtn');
+  if (dropdown && userBtn && !dropdown.contains(e.target) && e.target !== userBtn && !userBtn.contains(e.target)) {
+    dropdown.style.display = 'none';
+  }
+});
+const logoutBtn = document.getElementById('logoutButton');
+if (logoutBtn) {
+  logoutBtn.addEventListener('click', () => {
+    localStorage.removeItem('mk_current_user');
+    updateAuthUI();
+    showToast('Logged out successfully.');
+    if (window.location.pathname.includes('checkout.html')) {
+      window.location.href = 'index.html';
+    }
+    // Close dropdown
+    const dropdown = document.getElementById('userDropdown');
+    if (dropdown) dropdown.style.display = 'none';
+  });
+}
