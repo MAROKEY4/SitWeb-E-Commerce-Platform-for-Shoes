@@ -141,21 +141,53 @@
   <div class="cart-footer"></div>
 </aside>
 
-<!-- ── Hero ────────────────────────────────────────────────── -->
+<!-- ── Hero — 3D Cinematic ─────────────────────────────────── -->
 <section class="hero" id="home">
   <div class="hero-bg">
     <img src="pictures/background img.jpg" alt="Hero" onerror="this.style.display='none'">
-    <div class="hero-overlay"></div>
   </div>
-  <div class="hero-content">
-    <span class="hero-eyebrow">New Collection 2026</span>
-    <h1 class="hero-title">Step Into<br><em>Elegance.</em></h1>
-    <p class="hero-sub">Premium footwear designed for comfort, style, and confidence — every single step.</p>
-    <div class="hero-cta">
-      <a href="#products" class="btn-primary">Shop Now <i class="fas fa-arrow-right"></i></a>
-      <a href="#about" class="btn-ghost">Our Story</a>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-inner">
+    <div class="hero-content">
+      <span class="hero-tag"><i class="fas fa-crown"></i> World-Class Footwear Collective</span>
+
+      <h1 class="hero-title-3d">
+        <span class="line">Step Into</span>
+        <span class="line">Elegance</span>
+        <span class="line">Confidently</span>
+      </h1>
+
+      <p class="hero-sub-3d">Premium footwear engineered for comfort, style, and confidence — <strong>every single step.</strong></p>
+
+      <div class="hero-cta">
+        <a href="#products" class="btn-primary">Shop Now <i class="fas fa-arrow-right"></i></a>
+        <a href="#about" class="btn-ghost">Our Story</a>
+        <div class="hero-badge-inline">
+          <i class="fas fa-award"></i>
+          <span class="bi-lines"><span>Top-Rated</span><span>Shoe Store</span></span>
+        </div>
+      </div>
+
+      <div class="hero-stats-3d">
+        <div class="hs"><strong>2000+</strong><span>Happy Customers</span></div>
+        <div class="hs"><strong>50+</strong><span>Brands</span></div>
+        <div class="hs"><strong>4.9★</strong><span>Average Rating</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual" id="heroVisual">
+      <div class="hero-visual-glow"></div>
+      <div class="hero-visual-ring"></div>
+      <div class="hero-visual-ring2"></div>
+      <div class="hero-visual-card" id="heroVisualCard">
+        <img src="pictures/picture3-removebg-preview.png" alt="Featured Shoe" onerror="this.src='https://via.placeholder.com/340x340?text=MAROKEY'">
+      </div>
+      <div class="hero-float-chip chip-1"><i class="fas fa-shield-alt"></i> 100% Authentic</div>
+      <div class="hero-float-chip chip-2"><i class="fas fa-truck"></i> Free Shipping</div>
     </div>
   </div>
+
   <div class="hero-scroll">
     <span>Scroll</span><div class="scroll-line"></div>
   </div>
@@ -414,6 +446,52 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 
 renderProducts();
+
+// ── 3D Hero Parallax (mouse-driven tilt on floating shoe) ──────
+(function() {
+  const visual = document.getElementById('heroVisual');
+  const card = document.getElementById('heroVisualCard');
+  if (!visual || !card) return;
+  visual.addEventListener('mousemove', e => {
+    const r = visual.getBoundingClientRect();
+    const px = (e.clientX - r.left) / r.width - 0.5;
+    const py = (e.clientY - r.top) / r.height - 0.5;
+    card.style.transform = `rotateY(${-14 + px * 22}deg) rotateX(${6 - py * 18}deg)`;
+  });
+  visual.addEventListener('mouseleave', () => {
+    card.style.transform = 'rotateY(-14deg) rotateX(6deg)';
+  });
+})();
+
+// ── 3D Tilt on Product Cards (event-delegated for re-rendered grid) ──
+(function() {
+  const grid = document.getElementById('productsGrid');
+  if (!grid) return;
+  grid.addEventListener('mousemove', e => {
+    const card = e.target.closest('.product-card');
+    if (!card) return;
+    const r = card.getBoundingClientRect();
+    const px = (e.clientX - r.left) / r.width - 0.5;
+    const py = (e.clientY - r.top) / r.height - 0.5;
+    card.style.setProperty('--ry', (px * 10).toFixed(2) + 'deg');
+    card.style.setProperty('--rx', (-py * 10).toFixed(2) + 'deg');
+  });
+  grid.addEventListener('mouseleave', e => {
+    const card = e.target.closest && e.target.closest('.product-card');
+    // reset all cards on leave of grid to be safe
+    grid.querySelectorAll('.product-card').forEach(c => {
+      c.style.setProperty('--rx', '0deg');
+      c.style.setProperty('--ry', '0deg');
+    });
+  }, true);
+  grid.addEventListener('mouseout', e => {
+    const card = e.target.closest('.product-card');
+    if (card && !card.contains(e.relatedTarget)) {
+      card.style.setProperty('--rx', '0deg');
+      card.style.setProperty('--ry', '0deg');
+    }
+  });
+})();
 </script>
 </body>
-</html>
+</html>git init

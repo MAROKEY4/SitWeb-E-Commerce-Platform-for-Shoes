@@ -1,4 +1,3 @@
-
 const PRODUCTS = [
   { id:1,  name:"Blue AIR NIKE",          img:"pictures/picture3-removebg-preview.png",             oldPrice:71.43,  price:50.00,  discount:30, category:"sneakers", rating:4.8, reviews:124 },
   { id:2,  name:"Red AIR NIKE",           img:"pictures/picture4-removebg-preview.png",             oldPrice:50.00,  price:30.00,  discount:40, category:"sneakers", rating:4.6, reviews:89  },
